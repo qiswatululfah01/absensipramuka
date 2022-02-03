@@ -15,10 +15,10 @@ class DsiswaController extends Controller
     public function index(Request $request)
     {
         $keyword = $request->keyword;
-        $datas = Dadmin::where('kode_siswa', 'LIKE', '%' . $keyword . '%')
+        $datas = Dsiswa::where('kode_siswa', 'LIKE', '%' . $keyword . '%')
             ->orwhere('nama_siswa', 'LIKE', '%' . $keyword . '%')
             ->simplePaginate(5);
-        return view('pages.admin.dpembina.index', compact(
+        return view('pages.admin.dsiswa.index', compact(
             'datas',
             'keyword'
         ));

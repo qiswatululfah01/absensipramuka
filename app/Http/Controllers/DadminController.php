@@ -16,7 +16,7 @@ class DadminController extends Controller
     {
         $keyword = $request->keyword;
         $datas = Dadmin::where('kode_admin', 'LIKE', '%' . $keyword . '%')
-            ->orwhere('nama_dadmin', 'LIKE', '%' . $keyword . '%')
+            ->orwhere('nama_admin', 'LIKE', '%' . $keyword . '%')
             ->simplePaginate(5);
         return view('pages.admin.dadmin.index', compact(
             'datas',

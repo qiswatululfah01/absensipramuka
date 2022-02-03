@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Dadmin extends Model
 {
     use HasFactory;
-    protected $table = "dpembina";
+    protected $table = "dadmin";
 }
