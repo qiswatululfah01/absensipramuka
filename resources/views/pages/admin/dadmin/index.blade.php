@@ -42,20 +42,94 @@
         @csrf
             <div class="modal-body">
                 <div class="form-group">
-                    <label>Kode</label>
-                    <input type="text" name="kode_admin" class="form-control" id="kode_admin" aria-describedby="kode_admin" readonly>
-                  </div>
-                <div class="form-group">
-                  <label>Nama</label>
-                  <input type="text" name="nama" class="form-control" id="nama" aria-describedby="nama">
-                </div>
-                <p class="form-group"> Foto </p>
-                <div class="custom-file mb-3">
-                  <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-                  <label class="custom-file-label" for="validatedCustomFile">Pilih file...</label>
-                  <div class="invalid-feedback">Example invalid custom file feedback</div>
-                </div>
-                
+                <table border="0">
+                            <tr>
+                            <td width="30%"><label>Kode</label></td>
+                            <td width="70%"><input type="text" name="kode_admin" class="form-control" id="kode_admin" aria-describedby="kode_admin" readonly></td>
+                            </tr>
+                            <tr>
+                            <tr>
+                              <td width="30%"><label>Nama</label></td>
+                              <td width="70%" colspan="4"><input type="text" name="nama" class="form-control" id="nama" aria-describedby="nama" required></td> 
+                            </tr>
+                            <tr>
+                            <td width="30%"><label>NTA</label></td>
+                              <td width="70%"><input type="text" name="nta" class="form-control" id="nta" aria-describedby="nta" required></td>
+                            </tr>
+                            <td width="30%"><label>Tempat Lahir</label></td>
+                              <td width="70%"><input type="text" name="tempat_lahir" class="form-control" id="tempat_lahir" aria-describedby="tempat_lahir" required></td>
+                            </tr>
+                            <tr>
+                            <td width="30%"><label>Tanggal Lahir</label></td>
+                              <td width="70%"><input type="date" name="tanggal_lahir" class="form-control" id="tanggal_lahir" aria-describedby="tanggal_lahir" required></td>
+                            </tr>
+                            <tr>
+                              <td width="30%"><label>Alamat</label></td>
+                              <td width="70%" colspan="4"><textarea class="form-control" id="message-text" required></textarea></td> 
+                            </tr>
+                            <tr>
+                              <td width="30%"><label>Jenis Kelamin</label></td>
+                              <td width="70%" colspan="4">
+                                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                  <option selected>Pilih...</option>
+                                  <option value="1">Laki-laki</option>
+                                  <option value="2">Perempuan</option>
+                                  <option value="3">Laninya</option>
+                                </select>
+                                </div>  
+                              </td> 
+                            </tr>
+                            <tr>
+                              <td width="30%"><label>No Telp</label></td>
+                              <td width="70%" colspan="4"><input type="text" name="tlp" class="form-control" id="tlp" aria-describedby="tlp" required></td> 
+                            </tr>
+                            <tr>
+                              <td width="30%"><label>Jabatan</label></td>
+                              <td width="70%" colspan="4">
+                                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                  <option selected>Pilih...</option>
+                                  <option value="3">Kamabigus</option>
+                                  <option value="1">Pembina Utama</option>
+                                  <option value="2">Pelatih Lapangan</option>
+                                  <option value="3">Sekretaris</option>
+                                  <option value="3">Bendahara</option>
+                                  <option value="3">Operator</option>
+                                  <option value="3">Anggota</option>
+                                  <option value="3">Lainnya</option>
+                                </select>
+                                </div>  
+                              </td> 
+                            </tr>
+                            <tr>
+                              <td width="20%"><label>Golongan</label></td>
+                              <td width="80%" colspan="4">
+                                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                  <option selected>Pilih...</option>
+                                  <option value="3">Pembina</option>
+                                  <option value="1">Pembantu Pembina</option>
+                                  <option value="2">Penggalang Ramu</option>
+                                  <option value="2">Penggalang Rakit</option>
+                                  <option value="2">Penggalang Terap</option>
+                                  <option value="2">Lainnya</option>
+                                </select>
+                                </div>  
+                              </td> 
+                            </tr>
+                            <tr>
+                              <td width="20%"><label>Foto</label></td>
+                              <td width="80%" colspan="4">
+                              <div class="custom-file mb-3">
+                                <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                                <label class="custom-file-label" for="validatedCustomFile">Pilih file...</label>
+                                <div class="invalid-feedback">Example invalid custom file feedback</div>
+                              </div>
+                            </tr>
+                            <tr>
+                            <td width="30%"><label>Pangkalan</label></td>
+                            <td width="70%"><input type="text" name="pangkalan" class="form-control" id="pangkalan" aria-describedby="pangkalan" value="SMPN 43 Semarang" readonly></td>
+                            </tr>
+
+                      </table>
         </div>
 
         <div class="modal-footer">
@@ -78,33 +152,206 @@
           </button>
         </div>
 
-        <form id="editForm" action="" method="post" >
-          @csrf
-          <input type="hidden" name="_method" value="PATCH">
-            <div class="modal-body">
-                <div class="form-group">
-                    <label>Kode</label>
-                    <input type="text" name="kode_s" class="form-control" id="e_kode_s" aria-describedby="kode_s">
-                  </div>
-                  <div class="form-group">
-                  <label>Nama</label>
-                  <input type="text" name="nama" class="form-control" id="nama" aria-describedby="nama">
+            <form id="editForm" action="" method="post" >
+              @csrf
+              <input type="hidden" name="_method" value="PATCH">
+                <div class="modal-body">
+                    <div class="form-group">
+                    <table border="0">
+                            <tr>
+                            <td width="30%"><label>Kode</label></td>
+                            <td width="70%"><input type="text" name="kode_admin" class="form-control" id="kode_admin" aria-describedby="kode_admin" readonly></td>
+                            </tr>
+                            <tr>
+                            <tr>
+                              <td width="30%"><label>Nama</label></td>
+                              <td width="70%" colspan="4"><input type="text" name="nama" class="form-control" id="nama" aria-describedby="nama" required></td> 
+                            </tr>
+                            <tr>
+                            <td width="30%"><label>NTA</label></td>
+                              <td width="70%"><input type="text" name="nta" class="form-control" id="nta" aria-describedby="nta" required></td>
+                            </tr>
+                            <td width="30%"><label>Tempat Lahir</label></td>
+                              <td width="70%"><input type="text" name="tempat_lahir" class="form-control" id="tempat_lahir" aria-describedby="tempat_lahir" required></td>
+                            </tr>
+                            <tr>
+                            <td width="30%"><label>Tanggal Lahir</label></td>
+                              <td width="70%"><input type="date" name="tanggal_lahir" class="form-control" id="tanggal_lahir" aria-describedby="tanggal_lahir" required></td>
+                            </tr>
+                            <tr>
+                              <td width="30%"><label>Alamat</label></td>
+                              <td width="70%" colspan="4"><textarea class="form-control" id="message-text" required></textarea></td> 
+                            </tr>
+                            <tr>
+                              <td width="30%"><label>Jenis Kelamin</label></td>
+                              <td width="70%" colspan="4">
+                                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                  <option selected>Pilih...</option>
+                                  <option value="1">Laki-laki</option>
+                                  <option value="2">Perempuan</option>
+                                  <option value="3">Laninya</option>
+                                </select>
+                                </div>  
+                              </td> 
+                            </tr>
+                            <tr>
+                              <td width="30%"><label>No Telp</label></td>
+                              <td width="70%" colspan="4"><input type="text" name="tlp" class="form-control" id="tlp" aria-describedby="tlp" required></td> 
+                            </tr>
+                            <tr>
+                              <td width="30%"><label>Jabatan</label></td>
+                              <td width="70%" colspan="4">
+                                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                  <option selected>Pilih...</option>
+                                  <option value="3">Kamabigus</option>
+                                  <option value="1">Pembina Utama</option>
+                                  <option value="2">Pelatih Lapangan</option>
+                                  <option value="3">Sekretaris</option>
+                                  <option value="3">Bendahara</option>
+                                  <option value="3">Operator</option>
+                                  <option value="3">Anggota</option>
+                                  <option value="3">Lainnya</option>
+                                </select>
+                                </div>  
+                              </td> 
+                            </tr>
+                            <tr>
+                              <td width="20%"><label>Golongan</label></td>
+                              <td width="80%" colspan="4">
+                                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                                  <option selected>Pilih...</option>
+                                  <option value="3">Pembina</option>
+                                  <option value="1">Pembantu Pembina</option>
+                                  <option value="2">Penggalang Ramu</option>
+                                  <option value="2">Penggalang Rakit</option>
+                                  <option value="2">Penggalang Terap</option>
+                                  <option value="2">Lainnya</option>
+                                </select>
+                                </div>  
+                              </td> 
+                            </tr>
+                            <tr>
+                              <td width="20%"><label>Foto</label></td>
+                              <td width="80%" colspan="4">
+                              <div class="custom-file mb-3">
+                                <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                                <label class="custom-file-label" for="validatedCustomFile">Pilih file...</label>
+                                <div class="invalid-feedback">Example invalid custom file feedback</div>
+                              </div>
+                            </tr>
+                            <tr>
+                            <td width="30%"><label>Pangkalan</label></td>
+                            <td width="70%"><input type="text" name="pangkalan" class="form-control" id="pangkalan" aria-describedby="pangkalan" value="SMPN 43 Semarang" readonly></td>
+                            </tr>
+
+                      </table>
+                    </div>
                 </div>
-                  <p class="form-group"> Foto </p>
-                <div class="custom-file mb-3">
-                  <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-                  <label class="custom-file-label" for="validatedCustomFile">Pilih file...</label>
-                  <div class="invalid-feedback">Example invalid custom file feedback</div>
-                </div>
-        </div>
-        <div class="modal-footer">
-          <button align="right" type="submit" class="btn btn-primary">Simpan</button>
-        </div>
-        </form>
+            <div class="modal-footer">
+              <button align="right" type="submit" class="btn btn-primary">Update</button>
+            </div>
+            </form>
       </div>
       </div>
     </div>
   </div>
+
+   <!-- Modal View -->
+   <div class="modal fade" id="viewadmin" tabindex="-1" aria-labelledby="viewadminLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="viewadminLabel">Data Admin</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                    <div class="modal-body">
+                    <div class="form-group">
+                      <table border="0">
+                          @foreach ($datas as $value)
+                            <tr>
+                              <td width="30%"><label>Kode</label></td>
+                              <td width="2%">:</td>
+                              <td width="30%">{{$value->kode_admin}}</td>
+                              <td width="7%" rowspan="5"></td>
+                              <td width=>Foto</td>
+                            </tr>
+                            <tr>
+                              <td width="30%"><label>NTA</label></td>
+                              <td width="2%">:</td>
+                              <td width="30%">{{$value->nta}}</td>
+                              <td width="20%" rowspan="3"><img src="assets/images/latihanrutin.jpeg" alt="First One" width="100%"></img></td>
+                              
+                            </tr>
+                            <tr>
+                              <td width="30%"><label>Nama</label></td>
+                              <td width="2%">:</td>
+                              <td width="30%">{{$value->nama_admin}}</td>
+                            </tr>
+                            <tr>
+                              <td width="30%"><label>Tempat Lahir</label></td>
+                              <td width="2%">:</td>
+                              <td width="30%">{{$value->tempat_lahir}}</td>
+                            </tr>
+                            <tr>
+                              <td width="30%"><label>Tanggal Lahir</label></td>
+                              <td width="2%">:</td>
+                              <td width="30%">{{$value->tanggal_lahir}}</td>
+                            </tr>
+                            <tr>
+                              <td width="30%"><label>Alamat</label></td>
+                              <td width="2%">:</td>
+                              <td width="30%" colspan="3">{{$value->alamat}}</td>
+                            </tr>
+                            <tr>
+                              <td width="30%"><label>Jenis Kelamin</label></td>
+                              <td width="2%">:</td>
+                              <td width="30%" colspan="3">{{$value->jenis_kelamin}}</td>
+                            </tr>
+                            <tr>
+                              <td width="30%"><label>Agama</label></td>
+                              <td width="2%">:</td>
+                              <td width="30%" colspan="3">{{$value->agama}}</td>
+                            </tr>
+                            <tr>
+                              <td width="30%"><label>Jabatan</label></td>
+                              <td width="2%">:</td>
+                              <td width="30%" colspan="3">{{$value->jabatan}}</td>
+                            </tr>
+                            <tr>
+                              <td width="30%"><label>Golongan</label></td>
+                              <td width="2%">:</td>
+                              <td width="30%" colspan="3">{{$value->golongan}}</td>
+                            </tr>
+                            <tr>
+                              <td width="30%"><label>No Telp</label></td>
+                              <td width="2%">:</td>
+                              <td width="30%" colspan="3">{{$value->tlp}}</td>
+                            </tr>
+                            <tr>
+                              <td width="30%"><label>Pangkalan</label></td>
+                              <td width="2%">:</td>
+                              <td width="30%" colspan="3">{{$value->pangkalan}}</td>
+                            </tr>
+
+                      </table>
+                          @endforeach
+
+                        </div>
+                </div>
+
+                <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">OK</span>
+                  </button> 
+                  
+                </div>
+                </form>
+              </div>
+              </div>
+            </div>
+          </div>
 
 <div class="d-flex justify-content-between">
   <div width="70%">
@@ -116,8 +363,8 @@
     </form>
 </div>
 
-    
-    <table class="table table-bordered table-responsive table-hover mt-2" width="80%">
+
+    <table class="table table-bordered table-responsive table-hover mt-2" width="50%">
         <thead class="table-dark">
         <tr align="center" >
             <th width="5%">NO</th>
@@ -134,7 +381,7 @@
                 <td>{{$value->kode_admin}}</td>
                 <td>{{$value->nama_admin}}</td>
                 <td>{{$value->foto}}</td>
-                <td align="right"><a class="btn btn-primary" href="{{url('show')}}">Lihat</a></td>
+                <td align="right"><button class="btn btn-info" data-toggle="modal" data-target="#viewadmin">Lihat</button></td>
                 <td align="right"><button class="btn btn-success" data-id="{{$value->id}}" data-kode="{{$value->kode_admin}}" data-foto="{{$value->foto}}" data-toggle="modal" data-target="#editadmin">Edit</button></td>
                 
                 <td>
